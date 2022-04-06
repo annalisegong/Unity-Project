@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomScript
+public class Room
 {
-    0 references
     public Room()
     {
 

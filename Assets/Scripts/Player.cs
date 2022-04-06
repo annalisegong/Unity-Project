@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Player
 {
-    2 references
     string name;
+    private int killCount;
 
     public Player(string name)
     {
         this.name = name;
+        this.killCount = 0;
     }
 
-    0 references
+    public void addKill()
+    {
+        this.killCount++;
+    }
+
+    public int getKillCount()
+    {
+        return this.killCount;
+    }
+
     public string getName()
     {
         return this.name;
