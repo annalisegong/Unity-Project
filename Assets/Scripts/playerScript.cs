@@ -16,13 +16,15 @@ public class playerScript : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
-    public void DoSomething()
+    public void display()
     {
-        print("Player: Do something called");
+        print("Player Script Display");
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        CORE.display();
+
         if(collision.gameObject.tag.Equals("enemy"))
         {
             count++;
@@ -30,15 +32,13 @@ public class playerScript : MonoBehaviour
             {   
                 this.thePlayer.addKill();
             }
-            print("player collision enter");
+           // print("player collision enter");
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        print(thePlayer.getName());
-
         if(Input.GetKeyDown("up"))
         {
             rb.velocity = Vector3.forward * speed;
