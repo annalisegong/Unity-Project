@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerScript : MonoBehaviour
 {
-    private Player thePlayer; 
+    private Player thePlayer;
     private Rigidbody rb;
     public float speed = 20f;
     private int count = 0;
@@ -16,46 +16,50 @@ public class playerScript : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
-    public void display()
+    /*public void display()
     {
         print("Player Script Display");
-    }
+    }*/
 
+    // this function doesn't work
     void OnCollisionEnter(Collision collision)
     {
+        //SendMessage("display");
         CORE.display();
 
         if(collision.gameObject.tag.Equals("enemy"))
         {
             count++;
             if(count == 3)
-            {   
+            {
                 this.thePlayer.addKill();
+                print("Kill Count: " + this.thePlayer.getKillCount());
             }
-           // print("player collision enter");
         }
     }
 
+    
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("up"))
+        //print(thePlayer.getName());
+        if (Input.GetKeyDown("up"))
         {
             rb.velocity = Vector3.forward * speed;
         }
-        else if(Input.GetKeyDown("down"))
+        else if (Input.GetKeyDown("down"))
         {
             rb.velocity = Vector3.back * speed;
         }
-        else if(Input.GetKeyDown("left"))
+        else if (Input.GetKeyDown("left"))
         {
             rb.velocity = Vector3.left * speed;
         }
-        else if(Input.GetKeyDown("right"))
+        else if (Input.GetKeyDown("right"))
         {
             rb.velocity = Vector3.right * speed;
         }
-        else if(Input.GetKeyDown("space"))
+        else if (Input.GetKeyDown("space"))
         {
             rb.velocity = Vector3.up * speed;
         }

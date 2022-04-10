@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player
 {
-    string name;
+    private string name;
     private int killCount;
 
     public Player(string name)
