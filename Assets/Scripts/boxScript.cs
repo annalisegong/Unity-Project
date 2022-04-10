@@ -34,7 +34,7 @@ public class boxScript : MonoBehaviour
         }
     }
 
-    public void enemyMove()
+    void Update()
     {
         float randomX = Random.Range(xMin, xMax);
         float randomZ = Random.Range(zMin, zMax);
@@ -55,12 +55,7 @@ public class boxScript : MonoBehaviour
         }
         else if (randomNum == 4)
         {
-            rb.velocity = target * speed * Time.deltaTime;
+            rb.velocity = target * speed;
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        enemyMove();
     }
 }
