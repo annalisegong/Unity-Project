@@ -33,7 +33,7 @@ public class CORE : MonoBehaviour
         {
             int x = Random.Range(-10,10);
             int z = Random.Range(-30,15);
-            return new Vector3(x, 4, z);
+            return new Vector3(x, 0, z);
         }
         
         for (int a = 0; a <=20; a++)
