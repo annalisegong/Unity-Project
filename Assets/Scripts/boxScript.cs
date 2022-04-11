@@ -9,7 +9,7 @@ public class boxScript : MonoBehaviour
     public GameObject thePlayer;
     private Vector3 playerPosition;
     private Rigidbody rb;
-    public float speed = 20f;
+    public float speed = 4f;
     private NavMeshAgent agent;
 
     // Start is called before the first frame update
