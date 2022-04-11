@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class boxScript : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class boxScript : MonoBehaviour
         count = 0;
         rb = this.gameObject.GetComponent<Rigidbody>();
         agent = this.gameObject.GetComponent<NavMeshAgent>();
+        agent.speed = 20f;
+        //agent.Warp(thePlayer.transform.position);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -35,7 +38,6 @@ public class boxScript : MonoBehaviour
 
     void Update()
     {
-        playerPosition = thePlayer.transform.position;
-        rb.velocity = new Vector3(playerPosition.x, 0, playerPosition.z) * speed;
+        agent.SetDestination(thePlayer.transform.position);
     }
 }
