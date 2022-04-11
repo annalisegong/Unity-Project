@@ -6,12 +6,6 @@ public class CORE : MonoBehaviour
 {
     public Transform enemyPrefab;
     public Transform spawnPoint;
-    public float xMin = -50;
-    public float xMax = 50;
-    public float zMin = -50;
-    public float zMax = 50;
-    public float speed = 3.0f;
-    Vector3 moveRandom;
 
     private static List<GameObject> theRooms = new List<GameObject>();
 
@@ -29,20 +23,11 @@ public class CORE : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 randomPos()
+        for(int i = 0; i < 20; i++)
         {
-            int x = Random.Range(-10,10);
-            int z = Random.Range(-30,15);
-            return new Vector3(x, 0, z);
-        }
-        
-        for (int a = 0; a <=20; a++)
-        {
-            Instantiate(enemyPrefab, randomPos(), Quaternion.identity);
-            float randomX = Random.Range(xMin, xMax);
-            float randomZ = Random.Range(zMin, zMax);
-            Vector3 target = new Vector3(randomX, 0, randomZ);
-            enemyPrefab.position = target * speed * Time.deltaTime;        
+            Transform t = Instantiate (enemyPrefab, spawnPoint.position, Quaternion.identity);
+            Rigidbody rb = t.GetComponent<Rigidbody>();
+            rb.velocity = new Vector3(Random.Range(10,30), 0, Random.Range(10,30));
         }
     }
 
