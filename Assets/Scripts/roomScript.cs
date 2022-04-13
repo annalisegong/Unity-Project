@@ -13,6 +13,6 @@ public class roomScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print("Room Entered: " + this.gameObject.ToString());
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Room
 {
+    private Player thePlayer;
+
     public Room()
     {
 

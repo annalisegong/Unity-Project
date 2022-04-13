@@ -7,11 +7,18 @@ public class CORE : MonoBehaviour
     public Transform enemyPrefab;
     public Transform spawnPoint;
 
-    private static List<GameObject> theRooms = new List<GameObject>();
+    //lists have built in thread safety and array lists do not
+    private static List<GameObject> theRoomGos = new List<GameObject>();
+    private static List<Room> theRooms = new List<Room>();
+
+    public static void addRoom(Room theRoom)
+    {
+        CORE.theRooms.Add(theRoom);
+    }
 
     public static void addRoomGO(GameObject go)
     {
-        CORE.theRooms.Add(go);
+        CORE.theRoomGos.Add(go);
         print("Added Room");
     }
 
