@@ -28,7 +28,7 @@ public class CORE : MonoBehaviour
         CORE.currentEnemy = e;
     }
 
-    public static void getEnemy()
+    public static Enemy getEnemy()
     {
         return CORE.currentEnemy;
     }
