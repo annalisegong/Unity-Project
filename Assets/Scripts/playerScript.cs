@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerScript : MonoBehaviour
 {
-    private Player thePlayer;
+    private Player thePlayer = new Player("Mike");
     private Rigidbody rb;
     public float speed = 20f;
     private int count = 0;
@@ -12,21 +12,17 @@ public class playerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        thePlayer = new Player("Mike");
+        CORE.setPlayer(thePlayer);
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
-    /*public void display()
+    public Player getPlayer()
     {
-        print("Player Script Display");
-    }*/
+        return this.thePlayer;
+    }
 
-    // this function doesn't work
     void OnCollisionEnter(Collision collision)
     {
-        //SendMessage("display");
-        CORE.display();
-
         if(collision.gameObject.tag.Equals("enemy"))
         {
             count++;
@@ -37,7 +33,6 @@ public class playerScript : MonoBehaviour
             }
         }
     }
-
     
     // Update is called once per frame
     void Update()
@@ -62,6 +57,10 @@ public class playerScript : MonoBehaviour
         else if (Input.GetKeyDown("space"))
         {
             rb.velocity = Vector3.up * speed;
+        }
+        else if(Input.GetKeyDown("f"))
+        {
+            print("fire");
         }
     }
 }

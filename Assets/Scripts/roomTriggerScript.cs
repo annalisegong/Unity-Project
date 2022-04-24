@@ -22,6 +22,7 @@ public class roomTriggerScript : MonoBehaviour
         }
         else if(other.gameObject.tag.Equals("enemy"))
         {
+            this.thisRoom.setEnemy(CORE.getEnemy());
             print("Enemy Entered room " + this.gameObject.ToString());
         }
     }
