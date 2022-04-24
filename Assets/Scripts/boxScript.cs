@@ -10,7 +10,7 @@ public class boxScript : MonoBehaviour
     private NavMeshAgent agent; 
     private Room currentRoom;
 
-    private Enemy theEnemy;
+    private Enemy theEnemy = new Enemy("e");
     private Rigidbody rb;
     public float speed = 20f;
     private int count;
@@ -32,7 +32,6 @@ public class boxScript : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody>();
         count = 0;
         agent = this.gameObject.GetComponent<NavMeshAgent>();
-        this.currentRoom = null;
         //agent.speed = 20f;
         //agent.Warp(thePlayer.transform.position);
     }

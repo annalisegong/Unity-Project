@@ -4904,7 +4904,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 400735485167958568, guid: 49efc98ae9526427bb0fa8d271b152a5, type: 3}
       propertyPath: m_Name
-      value: enemy
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 400735485167958568, guid: 49efc98ae9526427bb0fa8d271b152a5, type: 3}
       propertyPath: m_IsActive
@@ -4912,7 +4912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400735485167958568, guid: 49efc98ae9526427bb0fa8d271b152a5, type: 3}
       propertyPath: m_TagString
-      value: enemy
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 400735485167958569, guid: 49efc98ae9526427bb0fa8d271b152a5, type: 3}
       propertyPath: m_Enabled
