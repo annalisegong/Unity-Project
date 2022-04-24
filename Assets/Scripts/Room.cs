@@ -5,7 +5,7 @@ using UnityEngine;
 public class Room
 {
     private Player thePlayer;
-    private enemy theEnemy;
+    private Enemy theEnemy;
 
     public Room()
     {

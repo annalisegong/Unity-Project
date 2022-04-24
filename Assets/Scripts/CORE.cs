@@ -18,14 +18,14 @@ public class CORE : MonoBehaviour
         CORE.currentPlayer = p;
     }
 
-    public static void setEnemy(Enemy e)
-    {
-        CORE.currentEnemy = e;
-    }
-
     public static Player getPlayer()
     {
         return CORE.currentPlayer;
+    }
+
+    public static void setEnemy(Enemy e)
+    {
+        CORE.currentEnemy = e;
     }
 
     public static void getEnemy()

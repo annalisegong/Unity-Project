@@ -5,16 +5,17 @@ using UnityEngine.AI;
 
 public class boxScript : MonoBehaviour
 {
-    private int count;
     public GameObject thePlayer;
-    public GameObject theEnemy;
     private Vector3 playerPosition;
-    private Rigidbody rb;
-    public float speed = 20f;
     private NavMeshAgent agent; 
     private Room currentRoom;
 
-    public void setRoom(Room r)
+    private Enemy theEnemy;
+    private Rigidbody rb;
+    public float speed = 20f;
+    private int count;
+
+     public void setRoom(Room r)
     {
         this.currentRoom = r;
     }
@@ -27,14 +28,19 @@ public class boxScript : MonoBehaviour
     // Start is called before the first frame update
     void Start() //like a constructor
     {
-        count = 0;
+        CORE.setEnemy(theEnemy);
         rb = this.gameObject.GetComponent<Rigidbody>();
+        count = 0;
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         this.currentRoom = null;
         //agent.speed = 20f;
         //agent.Warp(thePlayer.transform.position);
     }
 
+    public Enemy getEnemy()
+    {
+        return this.theEnemy;
+    }
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag.Equals("Player"))
