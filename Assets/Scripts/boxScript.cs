@@ -8,10 +8,9 @@ public class boxScript : MonoBehaviour
     private int count;
     public GameObject thePlayer;
     private Vector3 playerPosition;
-    private NavMeshAgent agent; 
-    private Room currentRoom;
     private Rigidbody rb;
     public float speed = 20f;
+    private NavMeshAgent agent;
     private Enemy theEnemy;
 
     void Awake()
@@ -22,7 +21,7 @@ public class boxScript : MonoBehaviour
     // Start is called before the first frame update
     void Start() //like a constructor
     {
-        CORE.setEnemy(theEnemy);
+        CORE.setEnemy(this.theEnemy);
         count = 0;
         rb = this.gameObject.GetComponent<Rigidbody>();
         agent = this.gameObject.GetComponent<NavMeshAgent>();
@@ -34,6 +33,7 @@ public class boxScript : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("Player"))
         {
+            Destroy(CORE.getRoom());
             count++;
             if(count == 3)
             {

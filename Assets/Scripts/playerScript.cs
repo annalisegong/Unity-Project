@@ -34,6 +34,7 @@ public class playerScript : MonoBehaviour
             }
         }
     }
+
     
     // Update is called once per frame
     void Update()
