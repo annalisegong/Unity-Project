@@ -13,7 +13,7 @@ public class roomTriggerScript : MonoBehaviour
         CORE.addRoom(this.thisRoom);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag.Equals("Player"))
         {
@@ -22,7 +22,7 @@ public class roomTriggerScript : MonoBehaviour
         }
         else if(other.gameObject.tag.Equals("Enemy"))
         {
-            this.thisRoom.setEnemy(CORE.getEnemy());
+            this.thisRoom.setEnemy(CORE.getEnemy()); //lets the new room know about the enemy
             print("Enemy Entered room " + this.gameObject.ToString());
         }
     }

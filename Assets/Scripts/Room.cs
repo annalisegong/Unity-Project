@@ -22,7 +22,7 @@ public class Room
     public void setEnemy(Enemy e)
     {
         this.theEnemy = e;
-        this.theEnemy.setRoom(this);
+        this.theEnemy.setRoom(this); //let the enemy know they are in a new room
     }
 
     public Player getPlayer()

@@ -10,7 +10,7 @@ public class boxScript : MonoBehaviour
     private NavMeshAgent agent; 
     private Room currentRoom;
 
-    private Enemy theEnemy = new Enemy("e");
+    private Enemy theEnemy = new Enemy();
     private Rigidbody rb;
     public float speed = 20f;
     private int count;
