@@ -5,41 +5,31 @@ using UnityEngine.AI;
 
 public class boxScript : MonoBehaviour
 {
+    private int count;
     public GameObject thePlayer;
     private Vector3 playerPosition;
     private NavMeshAgent agent; 
     private Room currentRoom;
-
-    private Enemy theEnemy = new Enemy();
     private Rigidbody rb;
     public float speed = 20f;
-    private int count;
+    private Enemy theEnemy;
 
-     public void setRoom(Room r)
+    void Awake()
     {
-        this.currentRoom = r;
-    }
-
-    public Room getRoom()
-    {
-        return this.currentRoom;
+        this.theEnemy = new Enemy();
     }
 
     // Start is called before the first frame update
     void Start() //like a constructor
     {
         CORE.setEnemy(theEnemy);
-        rb = this.gameObject.GetComponent<Rigidbody>();
         count = 0;
+        rb = this.gameObject.GetComponent<Rigidbody>();
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         //agent.speed = 20f;
         //agent.Warp(thePlayer.transform.position);
     }
 
-    public Enemy getEnemy()
-    {
-        return this.theEnemy;
-    }
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag.Equals("Player"))

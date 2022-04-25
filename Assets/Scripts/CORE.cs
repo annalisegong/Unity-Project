@@ -33,6 +33,11 @@ public class CORE : MonoBehaviour
         return CORE.currentEnemy;
     }
 
+    public static GameObject getRoom()
+    {
+        return CORE.theRoomsGos[0];
+    }
+
     public static void addRoom(Room theRoom)
     {
         CORE.theRooms.Add(theRoom);

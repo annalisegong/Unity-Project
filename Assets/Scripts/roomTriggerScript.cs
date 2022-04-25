@@ -6,9 +6,15 @@ public class roomTriggerScript : MonoBehaviour
 {
     private Room thisRoom;
 
+    void Awake()
+    {
+        print("*************** Room trigger is awake *************");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        print("*************** Room trigger has started *************");
         this.thisRoom = new Room();
         CORE.addRoom(this.thisRoom);
     }
