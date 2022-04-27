@@ -9,13 +9,9 @@ public class roomTriggerScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        print("*************** Room trigger is awake *************");
-    }
-
-    void Start()
-    {
-        print("*************** Room trigger has started *************");
-        this.thisRoom = new Room();
+        print("************* Room trigger has started *************");
+        CORE.addRoomTriggerGO(this.gameObject);
+        this.thisRoom = new Room(this.gameObject);
         CORE.addRoom(this.thisRoom);
     }
 
@@ -30,18 +26,6 @@ public class roomTriggerScript : MonoBehaviour
         {
             this.thisRoom.setEnemy(CORE.getEnemy());
             print("Enemy Entered room " + this.gameObject.ToString());
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.tag.Equals("Player"))
-        {
-            Player.setPreviousRoom(this.thisRoom);
-        }
-        else if(other.gameObject.tag.Equals("Enemy"))
-        {
-            Enemy.setPreviousRoom(this.thisRoom);
         }
     }
 

@@ -8,19 +8,17 @@ public class CORE : MonoBehaviour
     public Transform spawnPoint;
 
     private static List<GameObject> theRoomsGos = new List<GameObject>();
+    private static List<GameObject> theRoomTriggerGos = new List<GameObject>();
     private static List<Room> theRooms = new List<Room>();
     private static Player currentPlayer = null;
     private static Enemy currentEnemy = null;
 
-    public static GameObject getRoom()
+    public static void destroyRoomGoGivenRoomTrigger(GameObject roomTrigger)
     {
-        for(int i = 0; i <= CORE.theRoomsGos.Count; i++)
-        {
-            if(Enemy.getPreviousRoom() == CORE.theRoomsGos[i] || Player.getPreviousRoom() == CORE.theRoomsGos[i])
-            {
-                return CORE.theRoomsGos[i]; //should return room from array list that matches room enemy just left
-            }
-        }
+        int indexOfRoomTrigger = CORE.theRoomTriggerGos.IndexOf(roomTrigger);
+        Destroy(CORE.theRoomsGos[indexOfRoomTrigger]);
+        CORE.theRoomTriggerGos.RemoveAt(indexOfRoomTrigger);
+        CORE.theRoomsGos.RemoveAt(indexOfRoomTrigger);
     }
 
     public static void setEnemy(Enemy e)
@@ -52,6 +50,11 @@ public class CORE : MonoBehaviour
     {
         CORE.theRoomsGos.Add(go);
         //print("Added Room");
+    }
+
+    public static void addRoomTriggerGO(GameObject go)
+    {
+        CORE.theRoomTriggerGos.Add(go);
     }
 
     public static void display()
