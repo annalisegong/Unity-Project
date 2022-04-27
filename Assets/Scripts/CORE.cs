@@ -16,7 +16,7 @@ public class CORE : MonoBehaviour
     {
         for(int i = 0; i <= CORE.theRoomsGos.Count; i++)
         {
-            if(Enemy.getPreviousRoom() == CORE.theRoomsGos[i])
+            if(Enemy.getPreviousRoom() == CORE.theRoomsGos[i] || Player.getPreviousRoom() == CORE.theRoomsGos[i])
             {
                 return CORE.theRoomsGos[i]; //should return room from array list that matches room enemy just left
             }

@@ -7,6 +7,7 @@ public class Player
     private string name;
     private int killCount;
     private Room currentRoom;
+    private Room previousRoom;
 
     public Player(string name)
     {
@@ -23,6 +24,16 @@ public class Player
     public Room getRoom()
     {
         return this.currentRoom;
+    }
+
+    public void setPreviousRoom(Room r)
+    {
+        this.previousRoom = r;
+    }
+
+    public Room getPreviousRoom()
+    {
+        return this.previousRoom;
     }
 
     public void addKill()

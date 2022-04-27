@@ -35,7 +35,11 @@ public class roomTriggerScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag.Equals("Enemy"))
+        if(other.gameObject.tag.Equals("Player"))
+        {
+            Player.setPreviousRoom(this.thisRoom);
+        }
+        else if(other.gameObject.tag.Equals("Enemy"))
         {
             Enemy.setPreviousRoom(this.thisRoom);
         }
