@@ -14,7 +14,13 @@ public class CORE : MonoBehaviour
 
     public static GameObject getRoom()
     {
-        return CORE.theRoomsGos[0];
+        for(int i = 0; i <= CORE.theRoomsGos.Count; i++)
+        {
+            if(Enemy.getPreviousRoom() == CORE.theRoomsGos[i])
+            {
+                return CORE.theRoomsGos[i]; //should return room from array list that matches room enemy just left
+            }
+        }
     }
 
     public static void setEnemy(Enemy e)

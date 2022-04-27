@@ -33,7 +33,6 @@ public class boxScript : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("Player"))
         {
-            Destroy(CORE.getRoom());
             count++;
             if(count == 3)
             {

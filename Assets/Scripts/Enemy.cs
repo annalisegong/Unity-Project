@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy
 {
     private Room currentRoom;
+    private Room previousRoom;
 
     public Enemy()
     {
@@ -16,8 +17,18 @@ public class Enemy
         this.currentRoom = r;
     }
 
+    public void setPreviousRoom(Room r)
+    {
+        this.previousRoom = r;
+    }
+
     public Room getRoom()
     {
         return this.currentRoom;
+    }
+    
+    public Room getPreviousRoom()
+    {
+        return this.previousRoom;
     }
 }
