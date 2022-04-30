@@ -21,7 +21,7 @@ public class Room
         if(e.getRoom() != null)
         {
             Room enemysCurrentRoom = e.getRoom();
-            CORE.destroyRoomGoGivenRoomTrigger(enemysCurrentRoom.getRoomTrigger());
+            CORE.destroyRoomGOGivenRoomTrigger(enemysCurrentRoom.getRoomTrigger());
         }
         this.theEnemy.setRoom(this);
     }
@@ -29,10 +29,11 @@ public class Room
     public void setPlayer(Player p)
     {
         this.thePlayer = p;
-        if(p.getRoom() != null)
+        //access the old room the player was in
+        if (p.getRoom() != null)
         {
             Room playersCurrentRoom = p.getRoom();
-            CORE.destroyRoomGoGivenRoomTrigger(playersCurrentRoom.getRoomTrigger());
+            CORE.destroyRoomGOGivenRoomTrigger(playersCurrentRoom.getRoomTrigger());
         }
         this.thePlayer.setRoom(this); //let the player know they are in a new room
     }

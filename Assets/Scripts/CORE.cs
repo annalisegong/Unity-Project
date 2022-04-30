@@ -13,12 +13,12 @@ public class CORE : MonoBehaviour
     private static Player currentPlayer = null;
     private static Enemy currentEnemy = null;
 
-    public static void destroyRoomGoGivenRoomTrigger(GameObject roomTrigger)
+    public static void destroyRoomGOGivenRoomTrigger(GameObject roomTrigger)
     {
         int indexOfRoomTrigger = CORE.theRoomTriggerGos.IndexOf(roomTrigger);
-        Destroy(CORE.theRoomsGos[indexOfRoomTrigger]);
-        CORE.theRoomTriggerGos.RemoveAt(indexOfRoomTrigger);
-        CORE.theRoomsGos.RemoveAt(indexOfRoomTrigger);
+        //Destroy(CORE.theRoomsGos[indexOfRoomTrigger]);
+        //CORE.theRoomTriggerGos.RemoveAt(indexOfRoomTrigger);
+        //CORE.theRoomsGos.RemoveAt(indexOfRoomTrigger);
     }
 
     public static void setEnemy(Enemy e)
